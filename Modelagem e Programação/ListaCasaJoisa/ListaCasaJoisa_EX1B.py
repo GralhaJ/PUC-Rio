@@ -2,10 +2,11 @@ def Price(peso, x, y, z):
     
     volume = x * y * z
     
-    if volume > 125000 and x or y or z > 60:
-        fdim = 10
-    elif volume > 125000 and (x or y or z) < 60:
-        fdim = 8
+    if volume > 125000:
+        if x or y or z > 60:
+            fdim = 10
+        else:
+            fdim = 8
     elif volume > 27000:
         fdim = 5
     else:
@@ -13,7 +14,7 @@ def Price(peso, x, y, z):
     
     if peso > 25:
         fpeso = 5
-    elif peso > 10 and peso <= 25:
+    elif peso > 10:
         fpeso = 3
     else:
         fpeso = 1
