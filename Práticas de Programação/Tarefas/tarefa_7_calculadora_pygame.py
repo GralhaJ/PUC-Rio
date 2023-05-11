@@ -1,4 +1,3 @@
-# calculadora usando pygame
 import pygame
 width = 800  #Largura Janela
 height = 650 #Altura Janela
@@ -76,9 +75,29 @@ def draw_screen(screen):
     t = sys_font.render("-", False, WHITE)
     screen.blit(t, (585,325))
 
-    pygame.draw.rect(screen, (0, 157, 0), (650, 400, 100, 100))
+    pygame.draw.rect(screen, (157, 0, 0), (450, 500, 100, 100))
+    t = sys_font.render("%", False, WHITE)
+    screen.blit(t, (480,525))
+
+    pygame.draw.rect(screen, (157, 0, 0), (550, 500, 100, 100))
+    t = sys_font.render("//", False, WHITE)
+    screen.blit(t, (580,525))
+
+    pygame.draw.rect(screen, (157, 0, 0), (50, 500, 100, 100))
+    t = sys_font.render("C", False, WHITE)
+    screen.blit(t, (85,525))
+
+    pygame.draw.rect(screen, (157, 0, 0), (550, 200, 100, 100))
+    t = sys_font.render(".", False, WHITE)
+    screen.blit(t, (590,220))
+
+    pygame.draw.rect(screen, (157, 0, 0), (450, 200, 100, 100))
+    t = sys_font.render("^", False, WHITE)
+    screen.blit(t, (490,220))
+
+    pygame.draw.rect(screen, (0, 157, 0), (250, 500, 100, 100))
     t = sys_font.render("=", False, WHITE)
-    screen.blit(t, (685,420))
+    screen.blit(t, (285,520))
     pass
 
 def mouse_click_down(px_mouse, py_mouse, mouse_buttons):
@@ -112,17 +131,24 @@ def mouse_click_down(px_mouse, py_mouse, mouse_buttons):
             result = result + "-"
         if check_click(550, 400, 100, 100, px_mouse, py_mouse):
             result = result + "/"
-        if check_click(650, 400, 100, 100, px_mouse, py_mouse):
-            i = 0
+        if check_click(450, 500, 100, 100, px_mouse, py_mouse):
+            result = result + "%"
+        if check_click(550, 500, 100, 100, px_mouse, py_mouse):
+            result = result + "//"
+        if check_click(550, 200, 100, 100, px_mouse, py_mouse):
+            result = result + "."
+        if check_click(450, 200, 100, 100, px_mouse, py_mouse):
+            result = result + "^"
+        if check_click(50, 500, 100, 100, px_mouse, py_mouse):
+            result = ""
+        if check_click(250, 500, 100, 100, px_mouse, py_mouse):
+            try:
+                result = str(eval(result))
+            except:
+                result = 'ERROR'
+                
+           
             
-            while result[i] != "*" or result[i] != "+":
-                i += 1
-            op1 = result[0:i]
-            op2 = result[i+1::]
-            if result[i] == "*":
-                result = str(int(op1)*int(op2))
-            if result[i] == "+":
-                result = str(int(op1)+int(op2))
                            
 def main_loop(screen):
     running = True
