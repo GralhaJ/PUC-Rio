@@ -66,6 +66,27 @@ def qntdVogaisString(s):
         return 1 + qntdVogaisString(s[1:])
     return qntdVogaisString(s[1:])
 
+def qntdCaracEspString(s, c):
+    if s == '':
+        return 0
+    if c == s[0]:
+        return 1 + qntdCaracEspString(s[1:], c)
+    return qntdCaracEspString(s[1:], c)
+
+def PertenceString(s, c):
+    if s == '':
+        return False
+    if s[0] == c:
+        return True
+    return PertenceString(s[1:], c)
+    
+def aPorArroba(s):
+    if s == '':
+        return s
+    if 'a' == s[0]:
+        return '@' + aPorArroba(s[1:])
+    return s[0:1] + aPorArroba(s[1:])
+
 
 
 
