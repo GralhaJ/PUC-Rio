@@ -41,6 +41,31 @@ def exibeMsn(msn,n):
     print(msn)
     return exibeMsn(msn,n-1)
 
+def prntCaract(s):
+    if s == '':
+        return 
+    print(s[0])
+    return prntCaract(s[1:])
+
+def prntCaractInv(s):
+    if s == '':
+        return
+    print(s[-1])
+    return prntCaractInv(s[0:-1])
+
+def qntdCaracString(s):
+    if s == '':
+        return 0
+    return 1 + qntdCaracString(s[1:])
+
+def qntdVogaisString(s):
+    if s == '':
+        return 0
+    vogais = 'aeiouAEIOU'
+    if s[0] in vogais:
+        return 1 + qntdVogaisString(s[1:])
+    return qntdVogaisString(s[1:])
+
 
 
 
