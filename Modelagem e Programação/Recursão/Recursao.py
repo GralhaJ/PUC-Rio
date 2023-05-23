@@ -118,4 +118,20 @@ def ocorrenciaCarac(lista, c):
                     ocorr += 1
     return ocorr
 
-    
+    def change(lista):
+    for i, el in enumerate(lista):
+        if type(el) == list:
+            change(el)
+        if type(el) == int or type(el) == float:
+            lista[i] = 2*el
+        if type(el) == str:
+            lista[i] = len(el)
+    return lista
+
+def substitui_string(lista):
+    for i, el in enumerate(lista):
+        if type(el) == list:
+            substitui_string(el)
+        if type(el) == str:
+            lista[i] = len(el)
+    return lista
