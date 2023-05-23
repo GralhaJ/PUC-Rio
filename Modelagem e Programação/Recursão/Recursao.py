@@ -98,5 +98,24 @@ def somaLista(lista):
                 soma += elemento
     return soma
 
+def contarString(lista):
+    contador = 0
+    for elemento in lista:
+        if type(elemento) == list:
+            contador += contarString(elemento)
+        if type(elemento) == str:
+            contador += 1
+    return contador
+
+def ocorrenciaCarac(lista, c):
+    ocorr = 0
+    for elemento in lista:
+        if type(elemento) == list:
+            ocorr += ocorrenciaCarac(elemento, c)
+        if type(elemento) == str:
+            for i in range(len(elemento)):
+                if elemento[i] == c:
+                    ocorr += 1
+    return ocorr
 
     
