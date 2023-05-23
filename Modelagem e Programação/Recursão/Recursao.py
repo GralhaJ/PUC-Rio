@@ -87,7 +87,16 @@ def aPorArroba(s):
         return '@' + aPorArroba(s[1:])
     return s[0:1] + aPorArroba(s[1:])
 
-
+def somaLista(lista):
+    soma = 0
+    for elemento in lista:
+        if type(elemento) == list:
+            if type(elemento) != str:
+                soma += somaLista(elemento)
+        else:
+            if type(elemento) != str:
+                soma += elemento
+    return soma
 
 
     
