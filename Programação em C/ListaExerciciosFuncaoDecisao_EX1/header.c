@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "header.c"
 
 void le_dados(int *p1) {
 
