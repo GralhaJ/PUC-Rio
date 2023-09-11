@@ -1,0 +1,4 @@
+﻿cl : linha de comando warning D9025: substituindo '/sdl' com '/GS-'
+  vetores.c
+C:\Users\PUC\Desktop\Project2\Project2\vetores.c(22,40): warning C4013: 'corrige' indefinido; assumindo extern retornando int
+  Project2.vcxproj -> C:\Users\PUC\Desktop\Project2\Debug\Project2.exe
