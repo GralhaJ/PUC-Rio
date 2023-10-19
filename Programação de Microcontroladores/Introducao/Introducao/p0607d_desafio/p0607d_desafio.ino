@@ -92,7 +92,14 @@ void loop() {
       instante_tick_anterior = instante_tick_atual;
     }
     else {
-      contador[indiceVisu] = contador[indiceVisu] + 15;
+      if (contador[indiceVisu]%15==0)
+      {
+      contador[indiceVisu]=contador[indiceVisu]+15;
+      }
+      else{  
+      contador[indiceVisu] = contador[indiceVisu] + (15- contador[indiceVisu]%15);
+      
+      }
       instante_tick_anterior = instante_tick_atual;
     }
   }
@@ -102,8 +109,14 @@ void loop() {
       instante_tick_anterior = instante_tick_atual;
     }
     else {
-      contador[indiceVisu] = contador[indiceVisu] - 15;
+      if (contador[indiceVisu]%15==0)
+      {
+      contador[indiceVisu]=contador[indiceVisu]-15;  
+      }
+      else{
+      contador[indiceVisu] = contador[indiceVisu]- contador[indiceVisu]%15;
       instante_tick_anterior = instante_tick_atual;
+      }
     }
 
     if (contador[indiceVisu] < 0) {
@@ -115,6 +128,7 @@ void loop() {
   if (contador[indiceDaContagemAtual] == 0 && emAndamento[indiceDaContagemAtual] == true) {
     emAndamento[indiceDaContagemAtual] = false;
     tone(campainha, frequenciasDasNotas[contaNota], intervalosEntreNotas[contaNota]);
+    tempoMusica = millis();
     flag = 0;
 
   }
