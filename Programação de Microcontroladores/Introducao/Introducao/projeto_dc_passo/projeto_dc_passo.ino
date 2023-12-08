@@ -3,13 +3,14 @@
 #define velmotor 3
 #define mla 4
 #define mlb 5
+
 int vel = 0;
 
 #define e1 8
 #define e2 9
 #define e3 10
 #define e4 11
-#define passosPorGiro 64
+#define passosPorGiro 32
 
 Stepper mp(passosPorGiro,e1,e3,e2,e4);
 
@@ -21,21 +22,41 @@ void setup()
   digitalWrite(mla,LOW);
   digitalWrite(mlb,LOW);
   analogWrite(velmotor,vel);
+  Serial.begin(9600);
+  Serial.setTimeout(10);
 }
 
 void loop()
 {
-  vel=30;
-  analogWrite(velmotor,vel);
+  String texto = Serial.readString();
+  texto.trim();
+  if (texto != "")
+  {
+    if (texto == "misture")
+    {
+      vel=40;
+      analogWrite(velmotor,vel);
 
-  digitalWrite(mlb,HIGH);
-  digitalWrite(mla,LOW);
+      motorPasso(500,1,1,1000);
 
-  motorPasso(500,1,1,0);
-  delay(3000);
-  motorPasso(500,-1,1,0);
-  delay(3000);
-  
+      digitalWrite(mlb,HIGH);
+      digitalWrite(mla,LOW);
+
+      delay(2000);
+
+      vel=30;
+      analogWrite(velmotor,vel);
+
+      delay(10000);
+
+      digitalWrite(mlb, LOW);
+      digitalWrite(mla,LOW);
+      
+      delay(1000);
+
+      motorPasso(500,-1,1,3000);
+    }
+  }
 }
 
 void motorPasso(int vel, int sentido, int voltas, int tmp)
@@ -48,3 +69,4 @@ void motorPasso(int vel, int sentido, int voltas, int tmp)
   delay(tmp);
   
 }
+
