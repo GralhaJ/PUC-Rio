@@ -1,0 +1,5 @@
+﻿cl : command line  warning D9025: overriding '/sdl' with '/GS-'
+  calculo_pi.c
+C:\Users\c2310284.LAB-GRAD.000\Desktop\Aula_06_Exercicios\Cálculo de PI\calculo_pi.c(9,27): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\c2310284.LAB-GRAD.000\Desktop\Aula_06_Exercicios\Cálculo de PI\calculo_pi.c(19,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Cálculo de PI.vcxproj -> C:\Users\c2310284.LAB-GRAD.000\Desktop\Aula_06_Exercicios\x64\Debug\Cálculo de PI.exe

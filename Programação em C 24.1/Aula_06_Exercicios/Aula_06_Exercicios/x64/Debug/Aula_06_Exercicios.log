@@ -1,0 +1,5 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Aula_06_Exercicios.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+cl : command line  warning D9025: overriding '/sdl' with '/GS-'
+  funcao_descontinua.c
+C:\Users\c2310284.LAB-GRAD.000\Desktop\Aula_06_Exercicios\Aula_06_Exercicios\funcao_descontinua.c(18,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Aula_06_Exercicios.vcxproj -> C:\Users\c2310284.LAB-GRAD.000\Desktop\Aula_06_Exercicios\x64\Debug\Função Descontínua.exe

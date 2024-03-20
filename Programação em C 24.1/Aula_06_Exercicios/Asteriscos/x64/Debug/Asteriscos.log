@@ -1,0 +1,4 @@
+﻿cl : command line  warning D9025: overriding '/sdl' with '/GS-'
+  asteriscos.c
+C:\Users\c2310284.LAB-GRAD.000\Desktop\Aula_06_Exercicios\Asteriscos\asteriscos.c(8,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Asteriscos.vcxproj -> C:\Users\c2310284.LAB-GRAD.000\Desktop\Aula_06_Exercicios\x64\Debug\Asteriscos.exe
